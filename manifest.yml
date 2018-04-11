@@ -1,0 +1,11 @@
+---
+applications:
+- name: session-redis
+  memory: 1G
+  random-route: true
+  buildpack: java_buildpack_offline
+  path: target/spring-session-pcf-redis-0.0.1-SNAPSHOT.jar
+  services:
+   - redis
+
+
