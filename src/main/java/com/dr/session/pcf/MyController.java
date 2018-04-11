@@ -14,12 +14,12 @@ public class MyController {
     @RequestMapping("/now")
     public String add(HttpSession session) {
         String timestamp = String.valueOf(Calendar.getInstance().getTimeInMillis());
-        session.setAttribute("session:pcf:redis:timestamp",timestamp);
+        session.setAttribute("timestamp",timestamp);
         return timestamp;
     }
 
     @RequestMapping("/value")
     public Object get(HttpSession session) {
-        return session.getAttribute("session:pcf:redis:timestamp");
+        return session.getAttribute("timestamp");
     }
 }
